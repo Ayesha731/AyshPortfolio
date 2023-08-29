@@ -1,0 +1,504 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+   
+    font-family: 'sans-serif','Times Roman','Merriweather', serif,'Sacramento', 'cursive','Montserrat','poppins';
+    ;
+}
+body{
+    background-color: rgb(44, 44, 44);
+    color:white;
+    
+}
+
+.header{
+    padding:1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    position:sticky;
+    top: 0;
+    z-index: 1000; 
+    opacity: 2;
+    
+}
+
+.logo{
+    font-size:1.8rem;
+    font-family: 'Sacramento';
+    font-weight:bolder;
+    color: orangered;
+    
+}
+
+.navbar .navlink{
+    color:white;
+    margin:10px;
+    transition: 0.3s;
+    
+}
+.navbar .navlink:hover,
+.navbar .navlink#active{
+    color:orangered;
+   
+    
+}
+#menu-icon{
+    font-size: 2rem;
+    color: white;
+    display: none;
+}
+#home{
+    min-height: 100vh;
+    padding:10px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h3{
+ font-size: 2.5rem;
+ font-weight: bold;
+ margin:5px;
+
+}
+.home-content h1{
+ font-size: 4.5rem;
+ font-weight: bold;
+ font-family: 'Sacramento';
+ line-height: 1.5;
+ margin:5px;
+
+}
+.home-content p{
+ 
+ margin-top:20px;
+ margin-bottom: 20px;
+ 
+
+}
+
+span{
+    color:rgb(255, 74, 8)
+}
+
+
+.home-img img{
+    width:35vw;
+    float:left;
+    transition: transform 0.1s;
+
+}
+
+.home-img img:hover{
+   transform: translateY(-2rem);
+}
+
+.social-media a{
+   color: orangered;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width:2.5rem;
+   background: transparent;
+   border: .15rem solid orangered;
+   height:2.5rem;
+   border-radius: 50%;
+   font-size: 1.4rem;
+   margin: 8px;
+   transition: 0.7s ease-in;
+}
+.social-media a:hover{
+  box-shadow: 0 0 2rem orangered;
+  background-color: orangered;
+  color: rgb(43, 42, 42);
+ 
+}
+.btn{
+    box-shadow: 0 0 1rem orangered;
+    color:rgb(253, 83, 22);
+    display: inline-block;
+    padding: 1rem;
+    background-color:rgb(17, 16, 16);
+    border-radius: 4rem;
+    margin: 2px;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-top:30px;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    color: rgb(17, 16, 16); 
+    background-color:rgb(253, 83, 22);
+    box-shadow: 0 0 1rem orangered;
+   
+}
+/* -------about--------------- */
+.about{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    
+}
+.about .about-img {
+   text-align:center;
+     
+}
+.about .about-img img {
+  max-width: 38vw;
+  height: auto;
+     
+}
+
+.about-content h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.about-content h3{
+    margin-bottom: 10px;
+    font-family: 'Sacramento';
+ line-height: 1.5;
+ font-size: 30px;
+}
+.about-content p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+.about-content{
+    padding: 80px;
+}
+.about-content .span1{
+   font-size: 0.8rem;
+   font-weight: 200;
+   letter-spacing: 3px;
+   color: white;
+   text-transform: uppercase;
+}
+
+hr{
+    height: 5px;
+    width: 100%;
+    color: white;
+    background-color: white;
+}
+
+.info-about1,
+.info-about2,
+.info-about3{
+    background-color: black;
+    font-size: 0.8rem;
+    display: block;
+    border-radius: 63% 35% 66% 39%;
+    padding: 15px;
+    width: 100px;
+    height: 80px;
+    box-shadow: 0 0 1.2rem orangered;
+    border: .1rem solid orangered;
+    z-index: 100;
+    animation: morph 6s linear infinite;
+    position: absolute;
+    outline: 1px solid black;
+    
+
+}
+
+.info-about1{
+    left: 25%;
+    top: 55%;
+}
+.info-about2{
+    left: 5%;
+    top: 65%;
+}
+.info-about3{
+    left: 18%;
+    top: 18%;
+}
+/* key frames---------------------------------------- */
+@keyframes morph {
+    0%,
+    100%{
+        border-radius:40% 60% 70% 30%
+    }
+    30%{
+        border-radius:30% 70% 50% 40%
+    }
+    60%{
+        border-radius:60% 40% 20% 40%
+    }
+    80%{
+        border-radius:40% 40% 60% 30%
+    }
+}
+/* ----------service css----------- */
+.service{
+    margin:150px;
+    height: 80vh;
+}
+.service-txt{
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+  color: white;
+  margin-bottom: 10px;
+
+}
+.service-txt h1{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.service-txt .span1{
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: white;
+    text-transform: uppercase;
+
+}
+.service-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: row;
+    
+    
+}  
+.service-box{
+    
+    border: .1rem solid orangered;
+    box-shadow: 0 0 1.2rem orangered;
+    padding: 10px;
+    border-radius: 10px;
+   margin-right: 30px;
+   transition: transform 0.1s ;
+   text-align: center;
+   margin-top: 50px;
+   position: relative;
+   /* width:650px;
+   height: 650px; */
+}
+.service-box h3{
+    
+    margin-top: 50px;
+    margin-bottom: 10px;
+   font-size: 2rem;
+    font-weight: 900;
+}
+.service-box p{
+    line-height: 1.6;
+    letter-spacing: 1px;
+   color: rgb(180, 180, 180);
+    margin-bottom: 10px;
+   
+}
+.service-box:hover{
+    
+    transform: translateY(-1rem);
+}
+.service-icon{
+    outline: 1px solid black;
+    box-shadow: 0 0 1.2rem orangered;
+    border: .1rem solid orangered;
+    padding: 2rem;
+    background-color:  black;
+    border-radius: 50%;
+    font-size: 3rem;
+    margin: 5px;
+    position: absolute;
+    left: 28%;
+    top:-12%;
+    z-index: 10;
+    
+}
+
+/* ------------skill css---------------------- */
+.skill-section{
+    margin:150px;
+    height: 80vh;
+   
+
+}
+.skill-txt {
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 900;
+   
+    color: white;
+    margin-bottom: 30px;
+}
+.skill-txt h1{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.skill-txt .span1{
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: white;
+    text-transform: uppercase;
+}
+.skill-main{
+    display: flex;
+    width:100%;
+  
+    
+}
+.skill-main h3{
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+   margin-bottom: 20px;
+    
+}
+.skill-left{
+    width: 50%;
+
+}
+.skill-left  .skill-bar .info{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 10px;
+
+}
+.skill-left  .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+    
+}
+.skill-bar .bar span{
+    width:50%;
+    height: 100%;
+    background-color: orangered;
+    box-shadow: 0 0 1.2rem orangered;
+    border-radius: 25px;
+    position: absolute;
+}
+.skill-bar .bar .html{
+    width:95%;
+    animation: html 4s;
+}
+.skill-bar .bar .css{
+    width:90%;
+    animation: css 3s;
+}
+.skill-bar .bar .javascript{
+    width:80%;
+    animation: javascript 4s;
+}
+.skill-bar .bar .react{
+    width:80%;
+    animation: react 3s;
+}
+.skill-bar .bar .backend{
+    width:60%;
+    animation: backend 2s;
+}
+.skill-bar .bar .figma{
+    width:70%;
+    animation: figma 4s;
+}
+.skill-right{
+    width: 50%;
+    
+
+}
+.skill-bar{
+    margin-bottom: 2.2rem;
+}
+/* --key frame---- */
+@keyframes html {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 95%;
+    }
+}
+@keyframes css {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes javascript {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes react {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes backend {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 60%;
+    }
+}
+@keyframes figma {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
+.professional{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+.box{
+    margin: 30px 0;
+    padding: 30px;
+}
+.circle{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid orangered;
+}
+.circle .points{
+ width: 5px;
+ height: 10px;
+ border-radius: 3px;
+ transform: rotate(calc(var(--i)*120deg)) translateY(-45px);
+ background-color: orangered;
+}
