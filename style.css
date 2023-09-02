@@ -9,50 +9,76 @@
     font-family: 'sans-serif','Times Roman','Merriweather', serif,'Sacramento', 'cursive','Montserrat','poppins';
     ;
 }
+:root{
+    --oranged-color:orangered;
+    --white-color:white;
+    --grey-color:rgb(44, 44, 44);
+    --black-color:black;
+}
 body{
-    background-color: rgb(44, 44, 44);
-    color:white;
+    background-color: var(--grey-color);
+    color:var(--white-color);
     
 }
-
+/* --------------------Headrer's Css--------------- */
 .header{
     padding:1rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: black;
+    background-color: var(--black-color);
     position:sticky;
     top: 0;
     z-index: 1000; 
     opacity: 2;
-    
+   
 }
 
 .logo{
     font-size:1.8rem;
     font-family: 'Sacramento';
     font-weight:bolder;
-    color: orangered;
+    color: var(--oranged-color);
     
 }
+.navbar {
+    display: none;
+    flex-direction: column;
+}
+
+
 
 .navbar .navlink{
-    color:white;
+    color:var(--white-color);
     margin:10px;
     transition: 0.3s;
     
 }
 .navbar .navlink:hover,
 .navbar .navlink#active{
-    color:orangered;
+    color:var(--oranged-color);
    
     
 }
 #menu-icon{
     font-size: 2rem;
-    color: white;
-    display: none;
+    color: var(--white-color);
+   
+    display: block;
 }
+/* ----media query of header----- */
+/* When screen is bigger than 768px (tablets and desktops) */
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #menu-icon {
+        display: none;
+    }
+}
+/* ---------------Home's CSS----------------------------- */
 #home{
     min-height: 100vh;
     padding:10px 100px;
@@ -91,21 +117,23 @@ span{
     width:35vw;
     float:left;
     transition: transform 0.1s;
+    /* border: 2px solid var(--oranged-color);
+    border-radius: 50%; */
 
 }
 
-.home-img img:hover{
+/* .home-img img:hover{
    transform: translateY(-2rem);
-}
+} */
 
 .social-media a{
-   color: orangered;
+   color: var(--oranged-color);
    display: inline-flex;
    justify-content: center;
    align-items: center;
    width:2.5rem;
    background: transparent;
-   border: .15rem solid orangered;
+   border: .15rem solid var(--oranged-color);
    height:2.5rem;
    border-radius: 50%;
    font-size: 1.4rem;
@@ -113,13 +141,13 @@ span{
    transition: 0.7s ease-in;
 }
 .social-media a:hover{
-  box-shadow: 0 0 2rem orangered;
-  background-color: orangered;
+  box-shadow: 0 0 2rem var(--oranged-color);
+  background-color: var(--oranged-color);
   color: rgb(43, 42, 42);
  
 }
 .btn{
-    box-shadow: 0 0 1rem orangered;
+    box-shadow: 0 0 1rem var(--oranged-color);
     color:rgb(253, 83, 22);
     display: inline-block;
     padding: 1rem;
@@ -134,17 +162,124 @@ span{
 .btn:hover{
     color: rgb(17, 16, 16); 
     background-color:rgb(253, 83, 22);
-    box-shadow: 0 0 1rem orangered;
+    box-shadow: 0 0 1rem var(--oranged-color);
    
 }
-/* -------about--------------- */
+.info-about4,
+.info-about5,
+.info-about6{
+    background-color: var(--black-color);
+    font-size: 0.8rem;
+    display: block;
+    border-radius: 50%;
+   padding: 8px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 1.2rem var(--oranged-color);
+    border: .1rem solid var(--oranged-color);
+    z-index: 100;
+    /* animation: morph 6s linear infinite; */
+    position: absolute;
+    outline: 1px solid var(--black-color);
+    
+
+}
+
+.info-about4{
+    right: 39%;
+    top: 60%;
+}
+.info-about5{
+    right: 5%;
+    top: 65%;
+}
+.info-about6{
+    right: 20%;
+    top: 20%;
+}
+/* key frames---------------------------------------- */
+/* @keyframes morph {
+    0%,
+    100%{
+        border-radius:40% 60% 70% 30%
+    }
+    30%{
+        border-radius:30% 70% 50% 40%
+    }
+    60%{
+        border-radius:60% 40% 20% 40%
+    }
+    80%{
+        border-radius:40% 40% 60% 30%
+    }
+} */
+
+/* -------Responsive CSS Starts Here------*/
+
+/* Medium devices (tablets) */
+@media only screen and (max-width: 768px) {
+    #home {
+      padding: 10px 30px;
+    }
+  
+    .home-content h3 {
+      font-size: 2rem;
+    }
+  
+    .home-content h1 {
+      font-size: 3rem;
+    }
+  
+    .home-content p {
+      font-size: 1rem;
+    }
+  
+    .home-img img {
+      width: 50vw;
+    }
+  }
+  
+  /* Small devices (phones) */
+  @media only screen and (max-width: 480px) {
+    #home {
+      flex-direction: column;
+      padding: 10px 15px;
+    }
+  
+    .home-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .home-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .home-img img {
+      width: 80vw;
+      float: none; /* Remove float so that it stacks properly */
+      margin: 20px 0; /* Add a bit of margin to separate from the text */
+    }
+  
+    .social-media a {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+  
+    .btn {
+      padding: 0.8rem;
+    }
+  }
+  
+/* -------about's CSS--------------- */
 .about{
     display:flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80vh;
     position: relative;
+    min-height: 80vh;
+    box-sizing: border-box;
     
 }
 .about .about-img {
@@ -182,33 +317,33 @@ span{
    font-size: 0.8rem;
    font-weight: 200;
    letter-spacing: 3px;
-   color: white;
+   color: var(--white-color);
    text-transform: uppercase;
 }
 
 hr{
     height: 5px;
     width: 100%;
-    color: white;
-    background-color: white;
+    color: var(--white-color);
+    background-color: var(--white-color);
 }
 
 .info-about1,
 .info-about2,
 .info-about3{
-    background-color: black;
+    background-color: var(--black-color);
     font-size: 0.8rem;
     display: block;
     border-radius: 63% 35% 66% 39%;
     padding: 15px;
     width: 100px;
     height: 80px;
-    box-shadow: 0 0 1.2rem orangered;
-    border: .1rem solid orangered;
+    box-shadow: 0 0 1.2rem var(--oranged-color);
+    border: .1rem solid var(--oranged-color);
     z-index: 100;
     animation: morph 6s linear infinite;
     position: absolute;
-    outline: 1px solid black;
+    outline: 1px solid var(--black-color);
     
 
 }
@@ -241,10 +376,96 @@ hr{
         border-radius:40% 40% 60% 30%
     }
 }
+
+
+/* Responsive CSS Starts Here */
+
+/* Medium devices (tablets) */
+@media only screen and (max-width: 768px) {
+    .about-content {
+        padding: 50px;
+    }
+
+    .about-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-content h3 {
+        font-size: 25px;
+    }
+
+    .about-content .span1 {
+        font-size: 0.7rem;
+    }
+
+    .about .about-img img {
+        max-width: 45vw;
+    }
+
+    .info-about1,
+    .info-about2,
+    .info-about3 {
+        font-size: 0.7rem;
+        width: 80px;
+        height: 65px;
+        padding: 10px;
+    }
+}
+
+/* Small devices (phones) */
+@media only screen and (max-width: 480px) {
+    .about {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+    }
+
+    .about-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-content h3 {
+        font-size: 40px;
+    }
+
+    .about .about-img img {
+        max-width: 70vw;
+    }
+
+    .info-about1,
+    .info-about2,
+    .info-about3 {
+        font-size: 0.6rem;
+        width: 60px;
+        height: 50px;
+        padding: 8px;
+        
+    }
+
+    .info-about1 {
+        left: 50%;
+        top: 5%;
+    }
+
+    .info-about2 {
+        left: 60%;
+        top: 25%;
+    }
+
+    .info-about3 {
+        left: 20%;
+        top: 34%;
+    }
+}
+
 /* ----------service css----------- */
 .service{
     margin:150px;
-    height: 80vh;
+   min-height: 80vh;  
+   box-sizing: border-box;
 }
 .service-txt{
   text-align: center;
@@ -252,7 +473,7 @@ hr{
   font-size: 0.8rem;
   font-weight: 200;
   letter-spacing: 1.5px;
-  color: white;
+  color: var(--white-color);
   margin-bottom: 10px;
 
 }
@@ -267,7 +488,7 @@ hr{
     font-size: 0.8rem;
     font-weight: 200;
     letter-spacing: 3px;
-    color: white;
+    color: var(--white-color);
     text-transform: uppercase;
 
 }
@@ -281,8 +502,8 @@ hr{
 }  
 .service-box{
     
-    border: .1rem solid orangered;
-    box-shadow: 0 0 1.2rem orangered;
+    border: .1rem solid var(--oranged-color);
+    box-shadow: 0 0 1.2rem var(--oranged-color);
     padding: 10px;
     border-radius: 10px;
    margin-right: 30px;
@@ -309,14 +530,14 @@ hr{
 }
 .service-box:hover{
     
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
 }
 .service-icon{
-    outline: 1px solid black;
-    box-shadow: 0 0 1.2rem orangered;
-    border: .1rem solid orangered;
+    outline: 1px solid var(--black-color);
+    box-shadow: 0 0 1.2rem var(--oranged-color);
+    border: .1rem solid var(--oranged-color);
     padding: 2rem;
-    background-color:  black;
+    background-color:  var(--black-color);
     border-radius: 50%;
     font-size: 3rem;
     margin: 5px;
@@ -327,21 +548,84 @@ hr{
     
 }
 
-/* ------------skill css---------------------- */
+
+/* Responsive CSS Starts Here */
+
+/* Medium devices (tablets) */
+@media only screen and (max-width: 768px) {
+    .service {
+        margin: 80px 50px;
+    }
+
+    .service-txt h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .service-txt .span1 {
+        font-size: 0.7rem;
+    }
+
+    .service-box {
+        margin-right: 20px;
+    }
+
+    .service-box h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-icon {
+        left: 20%;
+        font-size: 2.5rem;
+    }
+}
+
+/* Small devices (phones) */
+@media only screen and (max-width: 480px) {
+    .service {
+        margin: 50px 20px;
+    }
+
+    .service-txt h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-section {
+        flex-direction: column;
+    }
+
+    .service-box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .service-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+    }
+}
+
+
+/* ------------skill's css---------------------- */
 .skill-section{
     margin:150px;
-    height: 80vh;
-   
-
+    min-height: 80vh;
+    box-sizing: border-box;
 }
 .skill-txt {
     text-align: center;
     width: 100%;
     font-size: 1rem;
-    font-weight: 900;
-   
-    color: white;
+    font-weight: 900; 
+    color:  var(--white-color);
     margin-bottom: 30px;
+    
 }
 .skill-txt h1{
     margin-top: 10px;
@@ -354,7 +638,7 @@ hr{
     font-size: 0.8rem;
     font-weight: 200;
     letter-spacing: 3px;
-    color: white;
+    color:  var(--white-color);
     text-transform: uppercase;
 }
 .skill-main{
@@ -384,7 +668,7 @@ hr{
 .skill-left  .skill-bar .bar{
     width: 100%;
     height: 10px;
-    background-color: black;
+    background-color:var(--black-color);
     border-radius: 25px;
     margin-top: 10px;
     position: relative;
@@ -393,21 +677,21 @@ hr{
 .skill-bar .bar span{
     width:50%;
     height: 100%;
-    background-color: orangered;
-    box-shadow: 0 0 1.2rem orangered;
+    background-color:var(--oranged-color);
+    box-shadow: 0 0 1.2rem var(--oranged-color);
     border-radius: 25px;
     position: absolute;
 }
 .skill-bar .bar .html{
-    width:95%;
+    width:80%;
     animation: html 4s;
 }
 .skill-bar .bar .css{
-    width:90%;
+    width:80%;
     animation: css 3s;
 }
 .skill-bar .bar .javascript{
-    width:80%;
+    width:70%;
     animation: javascript 4s;
 }
 .skill-bar .bar .react{
@@ -419,7 +703,7 @@ hr{
     animation: backend 2s;
 }
 .skill-bar .bar .figma{
-    width:70%;
+    width:65%;
     animation: figma 4s;
 }
 .skill-right{
@@ -479,26 +763,564 @@ hr{
         width: 70%;
     }
 }
+
 .professional{
     display: grid;
     grid-template-columns: 2fr 2fr;
 }
 .box{
-    margin: 30px 0;
-    padding: 30px;
+    margin: 30px 10px;
+    position: relative;
+}
+.box .text{
+    text-align: center;
+    color: var(--white-color);
+    font-size: 1rem;
+}
+.box .text big{
+font-size: 400;
+letter-spacing: 1px;
+position: absolute;
+top: 35%;
+left: 40%;
+}
+.box .text small{
+    display: block;
+font-weight: 600;
+
 }
 .circle{
     width: 100%;
-    height: 90px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid orangered;
+    /* border: 2px solid orangered; */
 }
 .circle .points{
- width: 5px;
+ width: 2px;
  height: 10px;
+ position: absolute;
  border-radius: 3px;
- transform: rotate(calc(var(--i)*120deg)) translateY(-45px);
- background-color: orangered;
+ transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+ background-color: var(--black-color);
 }
+.points.marked{
+    animation: glow 0.4s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+
+/* ----keyframes------------------ */
+@keyframes glow {
+    0%{
+        background-color: var(--oranged-color);
+        box-shadow: none;
+    }
+    100%{
+        background-color: var(--oranged-color);
+        box-shadow: var(--white-color);
+    }
+}
+/* -------------Media Query-------- */
+/* General Styles for Mobile First Design */
+@media only screen and (max-width: 480px) {
+    .skill-main, .professional {
+        flex-direction: column;
+    }
+    
+    .skill-left, .skill-right, .service-box {
+        width: 100%;
+    }
+    
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) { /* Tablets and Small Laptops */
+    .skill-main, .professional {
+        flex-direction: row;
+    }
+    
+    .skill-left, .skill-right {
+        width: 50%;
+    }
+    
+    .service-box {
+        width: calc(33.33% - 20px); /* 33.33% for three boxes minus some margin */
+        margin: 10px;
+    }
+}
+
+
+
+/* ------------------Project's CSS------------------------------- */
+.project-section{
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.project-txt {
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 900; 
+    color:  var(--white-color);
+    margin-top: 100px;
+    
+}
+.project-txt h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.project-txt .span1{
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color:  var(--white-color);
+    text-transform: uppercase;
+}
+.filter-button{
+    margin: 2rem;
+    text-align: center;
+}
+.filter-button .btn2{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-left: 1.3rem;
+  color: var(--white-color);
+}
+.filter-button .btn2:hover{
+  color: var(--oranged-color);
+}
+.project-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 2rem;
+}
+.pro-box{
+    position: relative;
+    border-radius: 20px;
+    overflow:hiddens ;
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    grid-template-rows: 1fr auto;
+    border: .1rem solid var(--oranged-color);
+    box-shadow: 0 0 1rem var(--oranged-color);
+
+
+}
+.pro-image{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.pro-image img{
+    border-radius: 20px;
+    width: 100%;
+    opacity: 0.5;
+    height: 100%;
+    transition: 0.5s;
+}
+.pro-content{
+ border-radius: 20px;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ background: linear-gradient(black,orangered);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+flex-direction: column;
+text-align: center;
+padding: 0 2rem;
+transition: 0.5s;
+}
+.pro-content h3{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.pro-content p{
+  font-size: 0.8rem;
+  margin: 15px 0 15px 0;
+}
+.pro-content a{
+ background-color: var(--white-color);
+ border-radius: 50%;
+width: 50px;
+height: 50px;
+border: 1px solid var(--black-color);
+outline: var(--white-color);
+display: inline-flex;
+justify-content: center;
+align-items: center;
+
+}
+.pro-content a i{
+font-size: 2rem;
+color: var(--grey-color);
+
+}
+.pro-box:hover .pro-content{
+    opacity: 1;
+}
+.pro-box:hover .pro-image img{
+   transform: scale(0.5);
+}
+
+/* --------------Media Query------------- */
+
+
+/* Tablet and Small Laptops */
+@media screen and (max-width: 768px) {
+    .filter-button {
+        flex-direction: row; /* Line up buttons horizontally */
+        gap: 20px;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two column layout */
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+/* Mobile First Design */
+.projects {
+    text-align: center; /* Center align the filter buttons*/ 
+}
+
+.filter-button {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+} 
+
+ .project-gallery {
+    grid-template-columns: 1fr; 
+}  
+}
+
+
+
+
+/* ----------------------Education's CSS---------------------------------- */
+
+.education-section {
+    box-sizing: border-box;
+    min-height: 80vh;
+  }
+  
+  .education-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+   
+  }
+.education-left{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10rem;
+ margin: 2rem;
+
+} 
+.education-column{
+  flex: 1 1 40rem;
+}
+.education-column .title{
+    font-size: 2rem;
+    margin:0 0 2rem 3rem;
+
+}
+.education-box{
+    border-left: 0.2rem solid var(--oranged-color);
+    margin: 2rem;
+    
+
+}
+.education-box .education-content{
+    position: relative;
+    padding-left: 2rem;  
+    
+}
+.education-box .education-content::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    top:0;
+    left: -2.5%;
+    background-color: var(--oranged-color);
+}
+.education-content .content{
+    position: relative;
+    padding: 1.5rem;
+    border: 2px solid var(--oranged-color);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+
+}
+
+.education-content .content::before{
+    content: '';
+    position: absolute; 
+    width:0;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgb(71, 70, 70);
+    z-index: -1;
+    transition: 0.5s;
+}
+.education-content .content:hover:before{
+  width: 100%;
+}
+
+.education-content .year{
+    font-size: 1rem;
+    color: var(--oranged-color);
+    margin-bottom: .5rem;
+
+}
+.education-content .year i{
+   padding-right: 4px;
+}
+.education-content h3{
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.education-content h5{
+  font-size: .8rem;
+  margin-bottom: 5px;
+ 
+}
+/* -------------------------------------------------------- */
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+    .education-main {
+        flex-direction: column; /* stack columns vertically on smaller screens */
+        padding: 1rem;
+    }
+    
+    .education-left, .education-right {
+        width: 100%; /* full width on smaller screens */
+        margin-bottom: 2rem;
+    }
+    
+    .education-column {
+        flex: 1; /* remove the fixed flex-basis for a responsive width */
+    }
+    
+    .education-box {
+        margin: 1rem 0;
+    }
+}
+
+
+
+/* Tablet and larger devices */
+@media (min-width: 768px) {
+    .education-main {
+        flex-direction: row; /* revert to row layout for larger screens */
+        padding: 2rem;
+    }
+    .education-left, .education-right {
+        width: 50%; /* half width on larger screens */
+    }
+}
+
+/* -------------contact us------------------------ */
+.contact-section{
+    display: flex;
+    min-height: 80vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+.contact-content{
+    width: 50%;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding: 100px;
+
+    
+}
+.contact-content h3{
+   font-weight: 600;
+   margin-bottom: 40px;
+
+    
+}
+.contact-content .icons{ 
+   margin-bottom: 50px;   
+   margin-top: 50px;
+}
+.contact-content .icons p{ 
+   line-height: 20px;
+}
+.contact-content p span i { 
+   color: var(--oranged-color);
+
+}
+
+
+.form1 {
+    text-align: start;
+  }
+  
+  .form-content .text {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    border: 2px solid var(--oranged-color);
+    border-radius: 50px;
+    padding: 10px;
+    transition: border-color 0.3s;
+    font-size: 15px;
+    color: var(--oranged-color);
+    border: 2px solid var(--oranged-color);
+    outline:var(--black-color);
+  }
+  
+  .form-content #area {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    border: 2px solid var(--oranged-color);
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-content {
+    margin-bottom: 20px;
+  }
+  
+  .btn1{
+    box-shadow: 0 0 1rem var(--oranged-color);
+    color:rgb(253, 83, 22);
+    display: inline-block;
+    padding: 1rem;
+    background-color:rgb(17, 16, 16);
+    border-radius: 4rem;
+    margin: 2px;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-top:30px;
+    margin-bottom: 10px;
+   width: 100%;
+}
+.btn1:hover{
+    color: rgb(17, 16, 16); 
+    background-color:rgb(253, 83, 22);
+    box-shadow: 0 0 1rem var(--oranged-color);
+   
+}
+  
+  .contact-txt {
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 900; 
+    color:  var(--white-color);
+    margin-bottom: 30px;
+    margin-top: 100px;
+    
+}
+.contact-txt h1{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.contact-txt .span1{
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color:  var(--white-color);
+    text-transform: uppercase;
+}
+
+  /* Add animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .form {
+    animation: fadeIn 1s ease-in-out;
+    padding-left: 50px;
+  }
+  /* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .contact-section{
+        flex-direction: column; /* stack content vertically on smaller screens */
+    }
+    
+    .contact-content{
+        width: 90%; /* take more width for smaller screens */
+        padding: 20px;
+    }
+    
+    .form-content .text, .form-content #area {
+        width: 100%;
+        max-width: none; /* allow inputs to take full width */
+    }
+    
+    .form {
+        padding-left: 0;
+    }
+    
+}
+
+/* Tablet and larger devices */
+@media (min-width: 768px) {
+    .contact-section{
+        flex-direction: row; /* revert to row direction for larger screens */
+    }
+
+    .contact-content {
+        width: 50%; /* restore the 50% width for larger screens */
+    }
+}
+
+
+  
+
+
+
+  
+  
