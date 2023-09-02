@@ -16,3 +16,10 @@ circles.forEach((item) => {
     pointsMarked[i].classList.add("marked");
   }
 });
+// ----------------------Typing Animation-----
+var typed = new Typed(".typing", {
+  strings: ["Web Developer.", "Web Designer.", "Graphic Designer."], // strings to be typed
+  typeSpeed: 100,
+  BackSpeed: 60,
+  loop: true,
+});
